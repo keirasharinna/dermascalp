@@ -1,0 +1,9 @@
+{
+  "Alopecia_Areata": 0,
+  "Dandruff": 1,
+  "Folliculitis": 2,
+  "Hair_Loss_General": 3,
+  "Head_Lice": 4,
+  "Healthy_Scalp":5,
+  "Psoriasis": 6
+}

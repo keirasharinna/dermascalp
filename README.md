@@ -49,7 +49,7 @@ cd dermascalp
 
 Download file model dari Google Drive:
 
-👉 **[Download hair_scalp_model.h5](GANTI_DENGAN_LINK_GDRIVE)**
+👉 **[Download hair_scalp_model.h5] (https://drive.google.com/file/d/1sFX9-CRJ9PDY9qBDM-uRjW1JI-IAEC2b/view?usp=sharing)**
 
 Letakkan file di:
 

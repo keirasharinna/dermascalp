@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Dermascalp — AI Scalp Condition Analyzer
 
-## Getting Started
+Aplikasi web berbasis Deep Learning untuk mendeteksi kondisi kulit kepala secara otomatis menggunakan EfficientNetV2S + Grad-CAM visualization.
 
-First, run the development server:
+![Backend](https://img.shields.io/badge/Backend-FastAPI-009688?style=flat-square&logo=fastapi)
+![Frontend](https://img.shields.io/badge/Frontend-Next.js-black?style=flat-square&logo=next.js)
+![AI](https://img.shields.io/badge/AI-TensorFlow-FF6F00?style=flat-square&logo=tensorflow)
+![Deploy](https://img.shields.io/badge/Deploy-Docker-2496ED?style=flat-square&logo=docker)
 
-```bash
+---
+
+## 🔍 Kondisi yang Dapat Dideteksi
+
+| Kondisi | Tingkat Keparahan |
+|---|---|
+| Healthy Scalp | Normal |
+| Dandruff | Ringan |
+| Alopecia Areata | Sedang |
+| Hair Loss General | Sedang |
+| Folliculitis | Sedang |
+| Head Lice | Parah |
+| Psoriasis | Parah |
+
+---
+
+## 🛠️ Tech Stack
+
+- **Backend:** FastAPI, TensorFlow 2.16, OpenCV
+- **Frontend:** Next.js 14, Tailwind CSS, TypeScript
+- **Model:** EfficientNetV2S (fine-tuned, 7 kelas)
+- **XAI:** Grad-CAM visualization
+- **Deploy:** Docker + Docker Compose
+
+---
+
+## 🚀 Cara Menjalankan
+
+### Prerequisites
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) sudah terinstall
+- Model file `.h5` (lihat bagian Download Model)
+
+### 1. Clone Repository
+
+​
+git clone https://github.com/keirasharinna/dermascalp.git
+cd dermascalp
+
+### 2. Download Model
+
+Download file model dari Google Drive:
+
+👉 **[Download hair_scalp_model.h5](GANTI_DENGAN_LINK_GDRIVE)**
+
+Letakkan file di:
+
+​
+dermascalp/backend/models/hair_scalp_model.h5
+
+### 3. Setup Environment
+
+​
+cp backend/.env.example backend/.env
+
+### 4. Jalankan dengan Docker
+
+​
+docker-compose up --build
+
+### 5. Buka Aplikasi
+
+- **Frontend:** http://localhost:3000
+- **Backend API:** http://localhost:8000
+- **API Docs:** http://localhost:8000/docs
+
+---
+
+## 🧪 Cara Pakai Tanpa Docker (Development)
+
+**Backend:**
+
+​
+cd backend
+python -m venv venv
+venvScriptsactivate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+
+**Frontend:**
+
+​
+cd frontend
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 👩‍💻 Author
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Keira Myeisharinna P. P.**  
+**Khansa Amelia A. A.**  
+**Regina Avril P. P.**  
+Proyek Sains Data — Semester 6
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ⚠️ Disclaimer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Dermascalp adalah alat bantu skrining berbasis AI, **bukan pengganti diagnosis medis profesional**. Selalu konsultasikan hasil dengan dokter Sp.KK untuk penanganan definitif.

@@ -90,6 +90,10 @@ uvicorn app.main:app --reload
 ​
 cd frontend
 npm install
+
+# Buat file environment
+echo "NEXT_PUBLIC_API_URL=http://localhost:8000" > .env.local
+
 npm run dev
 
 ---
